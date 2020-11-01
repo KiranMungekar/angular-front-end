@@ -8,6 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,10 +22,14 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatInputModule,
+    MatAutocompleteModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

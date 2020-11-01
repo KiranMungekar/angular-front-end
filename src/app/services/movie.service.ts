@@ -9,37 +9,37 @@ import {filterModel} from '../models/filter.model';
   providedIn: 'root'
 })
 export class MovieService {
-
+  uri="http://localhost:3000/"
   constructor(private http:HttpClient) { }
 
   getAllMoviesList():Observable<any>{
-    return this.http.get('api/movies/all');
+    return this.http.get(this.uri+'api/movies/all');
   }
 
   filterMovies(name, rating, director, genre){
     const data=new filterModel('',name, rating, director, genre);
-    return this.http.post('api/movies/browse/',data);
+    return this.http.post(this.uri+'api/movies/browse/',data);
   }
 
   addMovie(movie:filterModel){
    // const data=new filter('',name, rating, director, genre);
-    return this.http.post('api/movies/browse/',movie);
+    return this.http.post(this.uri+'api/movies/browse/',movie);
   }
 
   getMovie(id:String){
-    return this.http.get('api/movies/browser/?id='+id);
+    return this.http.get(this.uri+'api/movies/browser/?id='+id);
   }
 
   updateMovie(movie:filterModel){
     // const data=new filter('',name, rating, director, genre);
-     return this.http.put('api/movies/browse/',movie);
+     return this.http.put(this.uri+'api/movies/browse/',movie);
   }
 
   deleteMovie(id:string){
     // const data=new filter('',name, rating, director, genre);
     const param= new HttpParams().append("id",id);
   
-     return this.http.delete('api/movies/browse/',{params:param});
+     return this.http.delete(this.uri+'api/movies/browse/',{params:param});
    }
 
 
