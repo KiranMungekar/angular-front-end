@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     
     path:'addMovie',
     component:MovieEditComponent
+  },
+  {
+    path:'signin',
+    component:RegisterComponent
   }
 ];
 
