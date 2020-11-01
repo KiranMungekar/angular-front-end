@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="m-2 p-3">
+        <h2>Edit Component</h2>
+        <div class="p-2">
+            <div class="pt-4 search-box bg-dark"> 
+                <div class="container">
+                  <div class="d-flex flex-column justify-content-center align-items-center px-5 py-3 movie-name-search-box">
+                    <div>
+                        <mat-form-field>
+                        
+                            <input type="text" matInput id="movieName" name="movieName" [formControl]="movieName" placeholder="Movie Name" >
+                        </mat-form-field>
+                    </div>
+                    <div class="py-1">
+                        <mat-form-field>
+                            <input type="number" matInput id="ratings" name="ratings" [formControl]="ratings" placeholder="Add ratings" aria-describedby="ratings">
+                        </mat-form-field>
+                        <!-- <mat-form-field appearance="fill">
+                          <mat-select [formControl]="ratingSearch" id="ratingInputSearch" >
+                            <mat-option *ngFor="let rating of ratingList" [value]="rating.value">{{rating.text}}</mat-option>
+                          </mat-select>
+                        </mat-form-field> -->
+                      </div>
+                      <div class="py-1">
+                        <mat-form-field class="example-chip-list">
+                          <mat-chip-list #chipList aria-label="Fruit selection">
+                            <mat-chip
+                              *ngFor="let genre of selectedGenre;let i= index"
+                              [selectable]="selectable"
+                              [removable]="removable">
+                              {{genre}}
+                              <mat-icon matChipRemove  (click)="removeFromGenre(i)">cancel</mat-icon>
+                            </mat-chip>
+                            <input
+                              placeholder="Genre"
+                              #genreUpdate
+                              [formControl]="genres"
+                              [matAutocomplete]="autoGenre"
+                              [matChipInputFor]="chipList">
+                          </mat-chip-list>
+                          <mat-autocomplete #autoGenre="matAutocomplete" (optionSelected)="addToGenre($event)">
+                            <mat-option *ngFor="let genre of filterGenre$ | async" [value]="genre">
+                              {{genre}}
+                            </mat-option>
+                          </mat-autocomplete>
+                        </mat-form-field>
+                      </div>
+                      <div class="py-1">
+                        <mat-form-field >
+                            <input type="text" matInput id="director" [formControl]="director" placeholder="Director" aria-describedby="director">
+                        </mat-form-field>
+                      </div>
+                      <div>
+                          <button class="btn btn-primary" (click)="done()"> Done</button>
+                      </div>
+                  </div>
+                  
+          
+                </div>
+                
+              </div>
+        </div>
+    </div>
+</div>

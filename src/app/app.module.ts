@@ -13,9 +13,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
+import { HomeComponent } from './components/home/home.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieEditComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

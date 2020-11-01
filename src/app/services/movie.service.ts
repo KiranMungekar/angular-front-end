@@ -23,23 +23,23 @@ export class MovieService {
 
   addMovie(movie:filterModel){
    // const data=new filter('',name, rating, director, genre);
-    return this.http.post(this.uri+'api/movies/browse/',movie);
+    return this.http.post(this.uri+'api/movies/',movie);
   }
 
   getMovie(id:String){
-    return this.http.get(this.uri+'api/movies/browser/?id='+id);
+    return this.http.get(this.uri+'api/movies?id='+id);
   }
 
   updateMovie(movie:filterModel){
     // const data=new filter('',name, rating, director, genre);
-     return this.http.put(this.uri+'api/movies/browse/',movie);
+     return this.http.put(this.uri+'api/movies/',movie);
   }
 
   deleteMovie(id:string){
     // const data=new filter('',name, rating, director, genre);
     const param= new HttpParams().append("id",id);
   
-     return this.http.delete(this.uri+'api/movies/browse/',{params:param});
+     return this.http.delete(this.uri+'api/movies',{params:param});
    }
 
 
