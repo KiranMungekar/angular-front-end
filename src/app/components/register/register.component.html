@@ -1,5 +1,57 @@
-<div class="container">
-    <div class="m-2 p-3">
+<div class="container p-3">
+
+    <div class="row pb-4 d-flex justify-content-center">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-8 p-0">
+            <ul class="nav nav-tabs" id="transportPopupTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active bg-ghost" id="signup-tab" data-toggle="tab" href="#signupTab" role="tab"
+                        aria-controls="Signup" aria-selected="true">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  bg-ghost" id="login-tab" data-toggle="tab" href="#loginTab" role="tab"
+                        aria-controls="Login" aria-selected="false">Login</a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>    
+    <div class="tab-content" id="loginPopupTabContent">
+        <div class="tab-pane fade show active" id="signupTab" role="tabpanel" aria-labelledby="signup-tab">
+            <div class="m-2 p-3 d-flex  justify-content-center bg-dark">
         
+                <div [formGroup]="registerForm" class="justify-content-center p-2">
+                    <div class="p-2">
+                        <mat-form-field>
+                            <input type="text" matInput formControlName="name" placeholder="Name"/> 
+                        </mat-form-field>
+                    </div>
+                    <div class="p-2">
+                        <mat-form-field>
+                            
+                            <input type="text" matInput formControlName="email" placeholder="Email" /> 
+                        </mat-form-field>
+                        
+                    </div>
+                    <div class="p-2">
+                        <mat-form-field>
+                            <input type="password" matInput formControlName="password" placeholder="password"/> 
+                        </mat-form-field>
+                       
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-raised text-white" (click)="registerUser()">Signup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="loginTab" role="tabpanel" aria-labelledby="signup-tab">
+
+        </div>
     </div>
+
+    <!-- <div class="d-flex  justify-content-center">
+        <h2>SignUp</h2>
+    </div> -->
+    
 </div>
